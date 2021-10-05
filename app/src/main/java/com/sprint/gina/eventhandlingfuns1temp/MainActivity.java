@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
     public static final String TAG = "MainActivityTag";
@@ -37,6 +38,17 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onButtonClick: button clicked!! (2.C)");
+                EditText usernameET = findViewById(R.id.editTextUsername);
+                EditText passwordET = findViewById(R.id.editTextTextPassword);
+
+                // warm up task 1
+                String username = usernameET.getText().toString();
+                String password = passwordET.getText().toString();
+                Log.d(TAG, "onClick: " + username + " " + password);
+
+                // task 2
+                usernameET.setText("");
+                passwordET.setText("");
             }
         });
     }
